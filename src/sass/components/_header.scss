@@ -1,0 +1,26 @@
+.header {
+    color: $color-white;
+
+    .logo {
+        padding-top: 10px;
+        text-align: center;
+    }
+
+    .logo--img {
+        width: 200px;
+    }
+
+    .menu-toggle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        background: $color-cell-blue;
+        z-index: 10;
+    }
+
+    .icon-menu {
+        width: 20px;
+        height: 20px;
+    }
+}

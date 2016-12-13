@@ -1,0 +1,66 @@
+body {
+    box-sizing: border-box;
+    background-attachment: fixed;
+    background-color: $color-cell-blue;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: $color-white;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    line-height: 1.3;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+img {
+    width: 100%;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    background: $color-transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 20px;
+    background-size: 80% auto;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.spacer {
+    visibility: hidden;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.icon-link,
+.icon-link-up {
+    position: relative;
+    top: 1px;
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+}
+
+.icon-link-up {
+    transform: rotate(180deg);
+}
+
+.table {
+    display: table;
+}
+
+.table-row {
+    display: table-row;
+}
+
+.table-cell {
+    display: table-cell;
+}

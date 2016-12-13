@@ -1,0 +1,13 @@
+{
+    "title": "Hallo React!",
+    "data": [
+        {
+            "title": "Star Wars",
+            "description": "In a galaxy far, far away…"
+        },
+        {
+            "title": "Star Trek",
+            "description": "Somewhere in your neighbourhood."
+        }
+    ]
+}

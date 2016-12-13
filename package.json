@@ -1,0 +1,150 @@
+{
+  "name": "cellular-react-redux-boilerplate",
+  "version": "0.0.1",
+  "description": "cellular-react-redux-boilerplate",
+  "repository": {
+    "type": "git",
+    "url": "gitlab@git.cellular.de:web/cellular_react_redux_boilerplate.git"
+  },
+  "author": [
+    "darasmus <darasmus@cellular.de>",
+    "gtavonius <gtavonius@cellular.de>"
+  ],
+  "license": "UNLICENSED",
+  "private": true,
+  "main": "src/js/main.js",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "ignore": [
+            "**/*/node_modules/**/*",
+            "**/*/src/js/lib/*"
+          ]
+        }
+      ],
+      "envify"
+    ]
+  },
+  "dependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-core": "^6.17.0",
+    "babel-es6-polyfill": "^1.1.0",
+    "babel-eslint": "^7.0.0",
+    "babel-istanbul": "^0.11.0",
+    "babel-istanbul-loader": "^0.1.0",
+    "babel-plugin-__coverage__": "^11.0.0",
+    "babel-plugin-es6-promise": "^1.0.0",
+    "babel-plugin-istanbul": "^3.0.0",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-runtime": "^6.11.6",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.0",
+    "browserify-istanbul": "^2.0.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "chai-enzyme": "^0.5.2",
+    "classnames": "^2.2.5",
+    "deep-freeze": "0.0.1",
+    "envify": "^3.4.1",
+    "enzyme": "^2.5.1",
+    "es6-promise": "^4.0.5",
+    "eslint": "^3.10.2",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-config-standard-react": "^4.2.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-react": "^6.7.1",
+    "eslint-plugin-standard": "^2.0.1",
+    "exorcist": "^0.4.0",
+    "fetch-mock": "^5.1.5",
+    "fstream-ignore": "^1.0.5",
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.0.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-compress": "^1.3.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-cssshrink": "0.0.9",
+    "grunt-env": "^0.4.4",
+    "grunt-eslint": "^19.0.0",
+    "grunt-exorcise": "^2.1.1",
+    "grunt-rsync": "^2.0.0",
+    "grunt-sass": "^1.2.1",
+    "grunt-scss-lint": "^0.5.0",
+    "isomorphic-fetch": "^2.2.1",
+    "istanbul": "^0.4.5",
+    "jsdom": "^9.5.0",
+    "jsdom-global": "^2.1.0",
+    "karma": "^1.3.0",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-browserify": "^5.1.0",
+    "karma-chai": "^0.1.0",
+    "karma-chai-as-promised": "^0.1.2",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "karma-coverage": "^1.1.1",
+    "karma-mocha": "^1.2.0",
+    "karma-sinon": "^1.0.5",
+    "karma-sinon-chai": "^1.2.4",
+    "karma-sourcemap-loader": "^0.3.7",
+    "load-grunt-tasks": "^3.5.2",
+    "mocha": "^3.1.0",
+    "mocha-jsdom": "^1.1.0",
+    "mocha-junit-reporter": "^1.12.1",
+    "moment": "^2.15.1",
+    "node-sass": "^3.10.1",
+    "node-sass-globbing": "0.0.23",
+    "nyc": "^8.3.1",
+    "react": "^15.3.2",
+    "react-addons-css-transition-group": "^15.3.2",
+    "react-addons-test-utils": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.6",
+    "react-router": "^2.8.1",
+    "react-router-redux": "^4.0.7",
+    "react-slick": "^0.14.5",
+    "react-smartbanner": "^2.1.0",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.7.4",
+    "redux-multi": "^0.1.12",
+    "redux-thunk": "^2.1.0",
+    "reset-css": "^2.2.0",
+    "shelljs": "^0.7.4",
+    "sinon": "^1.17.6",
+    "sinon-chai": "^2.8.0",
+    "time-grunt": "^1.4.0"
+  },
+  "nyc": {
+    "sourceMap": false,
+    "instrument": false,
+    "include": [
+      "test/**/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "html",
+      "cobertura"
+    ],
+    "report-dir": "./build/coverage/"
+  },
+  "scripts": {
+    "build": "grunt build-release",
+    "start": "grunt default",
+    "test:coverage": "NODE_ENV=test ./node_modules/.bin/nyc npm test $(find src/js -name \"*.js\")",
+    "test:watch": "NODE_ENV=test ./node_modules/.bin/mocha --watch --recursive --reporter min test/*test.js test/**/*test.js",
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --recursive --reporter spec test/*test.js test/**/*test.js",
+    "test:jenkins": "NODE_ENV=test ./node_modules/.bin/mocha --recursive --reporter dot --reporter mocha-junit-reporter --reporter-options mochaFile=./build/test-results.xml test/**/*test.js"
+  },
+  "devDependencies": {
+    "js-beautify": "^1.6.3"
+  }
+}

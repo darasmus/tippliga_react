@@ -1,0 +1,22 @@
+.footer {
+    margin: 0 12px;
+    padding: 15px 0 41px;
+    border-top: 1px solid $color-white-20;
+    color: $color-white;
+
+    a {
+        display: inline-block;
+        padding: 0 5px;
+        border-right: 1px solid $color-white-20;
+        font-size: 13px;
+
+        &:last-child {
+            padding-right: 0;
+            border-right: 0;
+        }
+
+        &:first-child {
+            padding-left: 0;
+        }
+    }
+}

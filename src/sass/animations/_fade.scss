@@ -1,0 +1,19 @@
+$effect-duration: 200ms;
+
+.fade-enter {
+    opacity: 0;
+
+    &.fade-enter-active {
+        transition: opacity $effect-duration ease-in;
+        opacity: 1;
+    }
+}
+
+.fade-leave {
+    opacity: 1;
+
+    &.fade-leave-active {
+        transition: opacity $effect-duration ease-in;
+        opacity: 0;
+    }
+}

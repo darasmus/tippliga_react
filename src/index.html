@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>React Boilerplate | CELLULAR</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+        <link rel="apple-touch-icon" href="/favicon.png">
+        <link rel="android-touch-icon" href="/favicon.png">
+
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
+        <link rel="stylesheet" type="text/css" href="/css/<%= pkg.name %>.css?<%= rev %>" />
+    </head>
+    <body>
+        <main id="app"></main>
+        <script>
+            var appVersion = "<%= tag %>";
+        </script>
+        <script type="text/javascript" src="/js/lib/browser-polyfill.min.js"></script>
+        <script type="text/javascript" src="/js/<%= pkg.name %>.js?<%= rev %>"></script>
+    </body>
+</html>
