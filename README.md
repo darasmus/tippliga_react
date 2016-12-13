@@ -1,4 +1,4 @@
-# CELLULAR React (with Redux) Boilerplate
+# React (with Redux) Boilerplate
 
 ## Requirments
 - npm
