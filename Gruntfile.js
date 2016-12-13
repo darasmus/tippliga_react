@@ -146,6 +146,12 @@ module.exports = function(grunt) {
                         return grunt.template.process(content);
                     }
                 }
+            },
+            api: {
+                expand: true,
+                cwd: '<%= srcFolder %>/api/',
+                src: [ '**/*.*'],
+                dest: '<%= outFolder %>/api/'
             }
         },
 
@@ -182,6 +188,10 @@ module.exports = function(grunt) {
             html: {
                 files: ['<%= srcFolder %>/*.html'],
                 tasks: ['copy:html']
+            },
+            api: {
+                files: ['<%= srcFolder %>/api/*.php'],
+                tasks: ['copy:api']
             }
         }
     });
