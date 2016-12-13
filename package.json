@@ -1,14 +1,13 @@
 {
-  "name": "cellular-react-redux-boilerplate",
+  "name": "tippliga-react",
   "version": "0.0.1",
-  "description": "cellular-react-redux-boilerplate",
+  "description": "tippliga-react-redux",
   "repository": {
     "type": "git",
-    "url": "gitlab@git.cellular.de:web/cellular_react_redux_boilerplate.git"
+    "url": "https://github.com/darasmus/tippliga_react.git"
   },
   "author": [
-    "darasmus <darasmus@cellular.de>",
-    "gtavonius <gtavonius@cellular.de>"
+    "darasmus <denny@arasmus.de>"
   ],
   "license": "UNLICENSED",
   "private": true,
