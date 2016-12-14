@@ -1,20 +1,16 @@
-export default (state = { loggedIn: false, data: {} }, action) => {
+export default (state = { loggedIn: false, user: {} }, action) => {
     switch (action.type) {
         case 'LOGIN_USER':
             return {
                 ...state,
-                loggedIn: true
+                loggedIn: action.loginStatus === 'success',
+                user: action.user
             };
         case 'LOGOUT_USER':
             return {
                 ...state,
-                loggedIn: false
-            };
-        case 'SET_DATA':
-            return {
-                ...state,
-                data: action.data,
-                loggedIn: action.loggedIn
+                loggedIn: false,
+                user: null
             };
         default:
             return state;

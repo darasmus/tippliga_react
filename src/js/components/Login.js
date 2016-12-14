@@ -3,22 +3,22 @@ import { connect } from 'react-redux';
 
 import * as userActions from '../actions/user';
 
-import loginApi from '../api/login';
-
 const mapDispatchToProps = (dispatch) => ({
-    logindata: (data) => dispatch(userActions.logindata(data))
+    checkLogin: () => dispatch(userActions.checkLogin()),
+    login: (data) => dispatch(userActions.login(data))
 });
 
 const mapStateToProps = (state) => ({
-    data: state.user.data,
+    user: state.user.user,
     loggedIn: state.user.loggedIn
 });
 
 class Login extends React.Component {
     static propTypes = {
-        logindata: React.PropTypes.func.isRequired,
-        data: React.PropTypes.object.isRequired,
-        loggedIn: React.PropTypes.bool.isRequired
+        checkLogin: React.PropTypes.func.isRequired,
+        login: React.PropTypes.func.isRequired,
+        user: React.PropTypes.object,
+        loggedIn: React.PropTypes.bool
     }
 
     constructor(props) {
@@ -29,16 +29,17 @@ class Login extends React.Component {
         };
     }
 
+    componentWillMount() {
+        this.props.checkLogin();
+    }
+
     onSubmit(e) {
         e.preventDefault();
         const userData = {
             usr: this.state.user,
             pwd: this.state.password
         };
-
-        loginApi.post(userData).then(data => {
-            this.props.logindata(data);
-        });
+        this.props.login(userData);
     }
 
     render() {
@@ -50,7 +51,6 @@ class Login extends React.Component {
                         <input name="password" type="password" value={this.state.password} onChange={e => this.setState({[e.target.name]: e.target.value})} placeholder="Password" />
                     </div>
                     <button type="submit">Login</button>
-                    MSG: {this.props.data.msg}
                 </form>
             </div>
         );

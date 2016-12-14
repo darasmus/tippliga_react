@@ -1,22 +1,52 @@
-const login = () => ({ type: 'LOGIN_USER' });
+import loginApi from '../api/login';
+import userApi from '../api/user';
 
-const logout = () => ({ type: 'LOGOUT_USER' });
-
-const logindata = (data) => (dispatch) => {
-    let loggedIn = false;
-    if (data.msg) {
-        loggedIn = true;
-    }
-
+const checkLogin = () => (dispatch) => {
     dispatch({
-        type: 'SET_DATA',
-        data: data,
-        loggedIn: loggedIn
+        type: 'LOGIN_USER',
+        loginStatus: 'loading'
+    });
+
+    userApi.get().then(user => {
+        dispatch({
+            type: 'LOGIN_USER',
+            loginStatus: 'success',
+            user
+        });
+    }, (error) => {
+        dispatch({
+            type: 'LOGIN_USER',
+            loginStatus: 'failed',
+            errorMsg: error
+        });
     });
 };
+
+const login = (credentials) => (dispatch) => {
+    dispatch({
+        type: 'LOGIN_USER',
+        loginStatus: 'loading'
+    });
+
+    loginApi.post(credentials).then(user => {
+        dispatch({
+            type: 'LOGIN_USER',
+            loginStatus: 'success',
+            user
+        });
+    }, (error) => {
+        dispatch({
+            type: 'LOGIN_USER',
+            loginStatus: 'failed',
+            errorMsg: error
+        });
+    });
+};
+
+const logout = () => ({ type: 'LOGOUT_USER' });
 
 export {
     login,
     logout,
-    logindata
+    checkLogin
 };

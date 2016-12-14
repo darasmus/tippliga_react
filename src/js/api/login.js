@@ -1,8 +1,6 @@
 const ENDPOINT = '/api/login.php';
 
-const transform = response => {
-    return response;
-};
+const transform = response => response;
 
 export default {
     post: (data) => {
