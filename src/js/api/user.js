@@ -5,7 +5,7 @@ const transform = response => response;
 export default {
     get: () => fetch(ENDPOINT)
         .then((response) => {
-            if (response.status >= 401) {
+            if (response.status === 401) {
                 throw new Error('Not autorized');
             }
             return response.json();
