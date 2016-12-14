@@ -45,12 +45,12 @@ class Login extends React.Component {
     render() {
         return (
             <div className={this.props.loggedIn ? 'login is-hidden' : 'login'}>
-                <form className="search-form" onSubmit={e => this.onSubmit(e)}>
+                <form className="login-form" onSubmit={e => this.onSubmit(e)}>
                     <div className="form-group">
-                        <input name="user" type="text" value={this.state.user} onChange={e => this.setState({[e.target.name]: e.target.value})} placeholder="Username" />
-                        <input name="password" type="password" value={this.state.password} onChange={e => this.setState({[e.target.name]: e.target.value})} placeholder="Password" />
+                        <input className="login--username" name="user" type="text" value={this.state.user} onChange={e => this.setState({[e.target.name]: e.target.value})} placeholder="Username" />
+                        <input className="login--password" name="password" type="password" value={this.state.password} onChange={e => this.setState({[e.target.name]: e.target.value})} placeholder="Password" />
                     </div>
-                    <button type="submit">Login</button>
+                    <button className="login--submit" type="submit">Login</button>
                 </form>
             </div>
         );
